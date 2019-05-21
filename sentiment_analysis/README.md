@@ -1,0 +1,1 @@
+This project is an introduction into sentiment analysis through the use of relatively simple machine learning concepts. 
