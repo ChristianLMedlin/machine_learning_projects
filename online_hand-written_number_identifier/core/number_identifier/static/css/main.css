@@ -1,3 +1,27 @@
 *{
-    background-color: red;
+    font-family: 'Chakra Petch', sans-serif;
+    background-color: lightgray;
+    color: black;
+}
+
+.title{
+    text-align: center;
+}
+
+.titleParagraph{
+    text-align: center;
+    font-size: 22px;
+}
+
+canvas{
+    width: 480px;
+    height: 480px;
+    background-color: white;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    border: solid black 2px;
 }

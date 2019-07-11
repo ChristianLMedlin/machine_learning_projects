@@ -2,14 +2,27 @@
 <html>
     <head>
         {% load staticfiles %}
+        <title>Number identifier</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Font import -->
+        <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
 
-        <!-- CSS CUSTOM -->
+        <!-- CSS import-->
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     </head>
     <body>
-            <h1>
+            <h1 class="title">
                 Number identification with Machine Learning!
             </h1>
-            <p></p>
+            <p class="titleParagraph">
+                This website uses Machine Learning written in Python to allow the software to identify any single digit numbers that you draw on the following
+                canvas. This is a fairly well documented Machine Learning model that utilizes the MNIST data set which contains 70,000 example images of hand-drawn numbers.
+                The program generalizes patterns from this dataset in order to predict any numbers that would be drawn in the future.
+            </p> 
+            <canvas>
+
+            </canvas>
     </body>
 </html>
