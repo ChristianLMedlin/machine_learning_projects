@@ -9,8 +9,11 @@
         <!-- Font import -->
         <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
 
-        <!-- CSS import-->
+        <!-- CSS import -->
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+        <!-- JavaScript import -->
+        <script src="{% static 'js\main.js' %}"></script>
     </head>
     <body>
             <h1 class="title">
@@ -21,7 +24,7 @@
                 canvas. This is a fairly well documented Machine Learning model that utilizes the MNIST data set which contains 70,000 example images of hand-drawn numbers.
                 The program generalizes patterns from this dataset in order to predict any numbers that would be drawn in the future.
             </p> 
-            <canvas>
+            <canvas id="canvas">
 
             </canvas>
     </body>
