@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', (e) => {
+window.addEventListener('DOMContentLoaded', (event) => {
     console.log('loaded')
 
     let clickX = []
@@ -7,11 +7,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let paint = false
     let canvas = document.getElementById('canvas')
 
-    function addClick(x, y, dragging)
-    {
-    clickX.push(x)
-    clickY.push(y)
-    clickDrag.push(dragging)
+    function addClick(x, y, dragging){
+        clickX.push(x)
+        clickY.push(y)
+        clickDrag.push(dragging)
     }
 
     function redraw(){
@@ -21,7 +20,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         context.lineJoin = "round"
         context.lineWidth = 5
                 
-        for(var i=0; i < clickX.length; i++) {		
+        for(let i=0; i < clickX.length; i++) {		
             context.beginPath()
             if(clickDrag[i] && i){
                 context.moveTo(clickX[i-1], clickY[i-1])
@@ -36,12 +35,26 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
     
-
     canvas.addEventListener("mousedown", e => {
         console.log("mousedown")
+        //These variable declerations may not be needed
+        let mouseX = e.pageX - this.offsetLeft
+        let mouseY = e.pageY - this.offsetTop
+                
+        paint = true
+        addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop)
+        redraw()
     })
 
-});
+    canvas.addEventListener("mousemove", function(e){
+        if(paint){
+          addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+          redraw();
+        }
+      })
+
+
+})
 
 `
 Store mouse x, y coordinates inside of array.
