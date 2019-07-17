@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let clickDrag = []
     let paint = false
     let canvas = document.getElementById('canvas')
-    context = canvas.getContext("2d")
+    let context = canvas.getContext("2d")
 
     function addClick(x, y, dragging){
         clickX.push(x)
@@ -36,12 +36,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
     
-    canvas.addEventListener("mousedown", function(e){
-        console.log("mousedown")
-        //These variable declerations may not be needed
-        let mouseX = e.pageX - this.offsetLeft
-        let mouseY = e.pageY - this.offsetTop
-                
+    canvas.addEventListener("mousedown", function(e){  
         paint = true
         addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop)
         redraw()
@@ -54,6 +49,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
       })
 
+    canvas.addEventListener("mouseup", function(e){
+        paint = false
+    })
+
+    canvas.addEventListener("mouseleave", function(e){
+        paint = false
+    })
 
 })
 
