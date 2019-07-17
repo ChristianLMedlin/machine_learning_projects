@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     function redraw(){
         context.clearRect(0, 0, context.canvas.width, context.canvas.height)
         
-        context.strokeStyle = "#df4b26"
+        context.strokeStyle = "black"
         context.lineJoin = "round"
         context.lineWidth = 5
                 
@@ -51,6 +51,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     canvas.addEventListener("mouseup", function(e){
         paint = false
+        console.log(context.getImageData(0, 0, 504, 504).data)
     })
 
     canvas.addEventListener("mouseleave", function(e){
@@ -60,11 +61,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 })
 
 
-// Store mouse x, y coordinates inside of array.
-
 // Find ways to modify the default canvas drawing "stylus" to better accommodate MNIST Dataset's image style.
 
-// Drawing resolutions will likely need to be divisible by 24 (24x24) as they should be as similar to the MNIST as possible when scaled down.
+// canvas resolutions will likely need to be divisible by 28 (28x28) as they should be as similar to the MNIST as possible when scaled down.
 
 // Consider using an embedded drawing app to replace the HTML canvas if performance with Machine Learning model is not satisfactory.
 
