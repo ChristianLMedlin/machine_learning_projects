@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         
         context.strokeStyle = "black"
         context.lineJoin = "round"
-        context.lineWidth = 5
+        context.lineWidth = 20
                 
         for(let i=0; i < clickX.length; i++) {		
             context.beginPath()
@@ -68,3 +68,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
 // Consider using an embedded drawing app to replace the HTML canvas if performance with Machine Learning model is not satisfactory.
 
 // Consider adding a second page or additional information to the home page detailing how the MNIST set was used to train the model and what technologies were used in its creation.
+
+// Research the MNIST dataset's preprocessing techniques to best match their input.
