@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         
         context.strokeStyle = "black"
         context.lineJoin = "round"
-        context.lineWidth = 20
+        context.lineWidth = 30
                 
         for(let i=0; i < clickX.length; i++) {		
             context.beginPath()
@@ -52,6 +52,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     canvas.addEventListener("mouseup", function(e){
         paint = false
         console.log(context.getImageData(0, 0, 504, 504).data)
+        context.drawImage(canvas, 0, 0, 504, 504, 0, 0, 28, 28)
+        new_canvas = canvas
+        context.clearRect(28, 28, 504, 504)
+        context.drawImage(canvas, 0, 0, 28, 28, 0, 0, 504, 504)
     })
 
     canvas.addEventListener("mouseleave", function(e){
@@ -60,6 +64,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 })
 
+// var img = new Image();
+//     var ctx = canvas.getContext("2d");
+//     var canvasCopy = document.createElement("canvas");
+//     var copyContext = canvasCopy.getContext("2d");
+
+//     img.onload = function()
+//     {
+//         var ratio = 1;
+
+//         if(img.width > maxWidth)
+//             ratio = maxWidth / img.width;
+//         else if(img.height > maxHeight)
+//             ratio = maxHeight / img.height;
+
+//         canvasCopy.width = img.width;
+//         canvasCopy.height = img.height;
+//         copyContext.drawImage(img, 0, 0);
+
+//         canvas.width = img.width * ratio;
+//         canvas.height = img.height * ratio;
+//         ctx.drawImage(canvasCopy, 0, 0, canvasCopy.width, canvasCopy.height, 0, 0, canvas.width, canvas.height);
+//     };
+
+//     img.src = reader.result;
 
 // Find ways to modify the default canvas drawing "stylus" to better accommodate MNIST Dataset's image style.
 
