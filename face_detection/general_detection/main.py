@@ -18,7 +18,6 @@ def image_or_video():
 
 
 
-image = cv2.imread(input("Enter the full filepath of your "))
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 video_capture = cv2.VideoCapture(0)
