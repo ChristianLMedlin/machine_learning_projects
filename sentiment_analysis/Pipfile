@@ -10,6 +10,8 @@ jupyter = "*"
 pandas = "*"
 numpy = "*"
 scikit-learn = "*"
+keras = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.7"
